@@ -1,10 +1,12 @@
 import React from "react";
 import "./Card.css";
 import { FaRegCircle } from "react-icons/fa6";
-import backlog from 
+import backlog from "../../assets/Backlog.svg";
+import todo from "../../assets/Todo.svg";
+import inprogress from "../../assets/Inprogress.svg";
+import done from "../../assets/Done.svg";
+
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { BiAdjust, BiLoader } from "react-icons/bi";
-import { BsCheckCircleFill, BsFillExclamationSquareFill } from "react-icons/bs";
 const Card = ({ id, title, tag, status, priority }) => {
   const isStatus = localStorage.getItem("group") === "status";
   const isPriority = localStorage.getItem("group") === "priority";
@@ -37,11 +39,11 @@ const Card = ({ id, title, tag, status, priority }) => {
               <img src={backlog} style={{ fontSize: "14px" }} />
             )
               : status === "Todo" ? (
-                <FaRegCircle style={{ fontSize: "13px", color: "#ddeded" }} />
+                <img src={todo} style={{ fontSize: "13px", color: "#ddeded" }} />
               ) : status === "In progress" ? (
-                <BiAdjust style={{ fontSize: "14px", color: "#f2d750" }} />
+                <img src={inprogress} style={{ fontSize: "14px", color: "#f2d750" }} />
               ) : status === "Done" ? (
-                <BsCheckCircleFill />
+                <img src={done} style={{ fontSize: "14px", color: "#a0a0a0" }} />
               )
                 : (
                   <IoMdCloseCircleOutline />
