@@ -1,6 +1,7 @@
 import React from "react";
 import "./Card.css";
 import { FaRegCircle } from "react-icons/fa6";
+import backlog from 
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { BiAdjust, BiLoader } from "react-icons/bi";
 import { BsCheckCircleFill, BsFillExclamationSquareFill } from "react-icons/bs";
@@ -33,7 +34,7 @@ const Card = ({ id, title, tag, status, priority }) => {
         {!isStatus &&
           (
             status === "Backlog" ? (
-              <BiLoader style={{ fontSize: "14px" }} />
+              <img src={backlog} style={{ fontSize: "14px" }} />
             )
               : status === "Todo" ? (
                 <FaRegCircle style={{ fontSize: "13px", color: "#ddeded" }} />
